@@ -1,13 +1,13 @@
-pop_17<-read.csv("µµ·Î±³Åë°ø´Ü_Àü±¹_»ç¸Á±³Åë»ç°í_2017.csv")
-dg_17<-subset(pop_17,pop_17$¹ß»ýÁö½Ãµµ=="´ëÀü")
+pop_17<-read.csv("ë„ë¡œêµí†µê³µë‹¨_ì „êµ­_ì‚¬ë§êµí†µì‚¬ê³ _2017.csv")
+dg_17<-subset(pop_17,pop_17$ë°œìƒì§€ì‹œë„=="ëŒ€ì „")
 
-dg_16<-read.csv("µµ·Î±³Åë°ø´Ü_´ëÀü_»ç¸Á±³Åë»ç°í_2016³â.csv")
+dg_16<-read.csv("ë„ë¡œêµí†µê³µë‹¨_ëŒ€ì „_ì‚¬ë§êµí†µì‚¬ê³ _2016ë…„.csv")
 
-pop_15<-read.csv("2015_»ç¸Á»ç°í.csv")
-dg_15<-subset(pop_15,pop_15$¹ß»ýÁö½Ãµµ=="´ëÀü")
+pop_15<-read.csv("2015_ì‚¬ë§ì‚¬ê³ .csv")
+dg_15<-subset(pop_15,pop_15$ë°œìƒì§€ì‹œë„=="ëŒ€ì „")
 
-pop_1214<-read.csv("2012_2014_±³Åë»ç¸Á»ç°íÁ¤º¸.csv")
-dg_1214<-subset(pop_1214,pop_1214$¹ß»ýÁö½Ãµµ=="´ëÀü")
+pop_1214<-read.csv("2012_2014_êµí†µì‚¬ë§ì‚¬ê³ ì •ë³´.csv")
+dg_1214<-subset(pop_1214,pop_1214$ë°œìƒì§€ì‹œë„=="ëŒ€ì „")
 
 
 
@@ -21,19 +21,19 @@ install.packages('leaflet')
 library(leaflet)
 leaflet(data=fi_dg) %>%
   addTiles() %>%
-  addCircles(lng = ~°æµµ,  #~lon : ÄÃ·³³×ÀÓ 
-             lat = ~À§µµ,
-             weight = 2, #¼± µÎ²²
-             radius = ~sqrt(»ç»óÀÚ¼ö) * 150, #Å©±â
-             popup = ~¹ß»ýÁö½Ã±º±¸, #ÆË¾÷±â´É 
-             fillColor = "red", #¿ø¾ÈÂÊ »ö»ó
+  addCircles(lng = ~ê²½ë„,  #~lon : ì»¬ëŸ¼ë„¤ìž„ 
+             lat = ~ìœ„ë„,
+             weight = 2, #ì„  ë‘ê»˜
+             radius = ~sqrt(ì‚¬ìƒìžìˆ˜) * 150, #í¬ê¸°
+             popup = ~ë°œìƒì§€ì‹œêµ°êµ¬, #íŒì—…ê¸°ëŠ¥ 
+             fillColor = "red", #ì›ì•ˆìª½ ìƒ‰ìƒ
              #fillColor = "transparent",
-             highlightOptions = highlightOptions( #°­Á¶¿É¼Ç
+             highlightOptions = highlightOptions( #ê°•ì¡°ì˜µì…˜
                weight = 10,
                color = "brown",
                fillColor = "green"
              ),
-             label = ~¹ß»ýÁö½Ã±º±¸ #¸¶¿ì½º¸¦ °®´Ù ´ë±â¸¸ÇØµµ Ç¥½Ã
+             label = ~ë°œìƒì§€ì‹œêµ°êµ¬ #ë§ˆìš°ìŠ¤ë¥¼ ê°–ë‹¤ ëŒ€ê¸°ë§Œí•´ë„ í‘œì‹œ
   )
 
 
@@ -47,8 +47,4 @@ leaflet(fi_dg) %>% addTiles() %>% addMarkers(
 
 
 
-library(maps)
-mapStates = map(127.393332,36.338147, fill = TRUE, plot = FALSE)
-leaflet(data = mapStates) %>% addTiles() %>%
-  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
 
